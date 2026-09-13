@@ -1,0 +1,10 @@
+{
+  "description": "This platform serves the Assemblies of God in Burkina Faso, offering a comprehensive solution for church management, user administration, financial oversight, and resource access.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
