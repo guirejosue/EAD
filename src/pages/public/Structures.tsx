@@ -10,7 +10,7 @@ import logoJAD from "../../imports/cropped-Logo-Circulaire-JAD.png";
 import logoDENAD from "../../imports/cropped-Logo-DENAD-Bon.png";
 import logoAD from "../../imports/ead-bf.png";
 
-export type StructureTab = "hierarchie" | "bureau" | "structures" | "oeuvres" | "partenariats";
+export type StructureTab = "hierarchie" | "structures" | "oeuvres" | "partenariats";
 
 // Bureau Exécutif National (BEN) - Présentation sobre & synthétique
 const bureauNational = [
@@ -230,7 +230,6 @@ export default function Structures({ initialTab }: { initialTab?: string | null 
 
   const tabs: { id: StructureTab; label: string; icon: React.ElementType }[] = [
     { id: "hierarchie", label: "Hiérarchie Territoriale", icon: Layers },
-    { id: "bureau", label: "Bureau National (BEN)", icon: Building2 },
     { id: "structures", label: "4 Structures Majeures", icon: Users },
     { id: "oeuvres", label: "Œuvres & Ministères", icon: Church },
     { id: "partenariats", label: "Alliances & Partenariats", icon: Globe },
@@ -344,59 +343,6 @@ export default function Structures({ initialTab }: { initialTab?: string | null 
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        )}
-
-        {/* ------------------------------------------------------------- */}
-        {/* ONGLET 2 : BUREAU EXÉCUTIF NATIONAL (BEN)                     */}
-        {/* ------------------------------------------------------------- */}
-        {tab === "bureau" && (
-          <div className="space-y-6 animate-fadeIn">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {bureauNational.map((m, idx) => {
-                const isPres = idx === 0;
-                return (
-                  <div 
-                    key={idx}
-                    className={`rounded-2xl p-4 border transition-all ${
-                      isPres 
-                        ? "md:col-span-2 lg:col-span-3 bg-gradient-to-r from-[#032A4E] to-[#0A5490] text-white border-blue-900 shadow-md" 
-                        : "bg-white border-slate-200 shadow-sm hover:border-blue-200"
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <div className="flex items-center gap-2.5">
-                        <div 
-                          className={`w-9 h-9 rounded-xl flex items-center justify-center font-black text-xs ${
-                            isPres ? "bg-amber-400 text-[#032A4E]" : "bg-blue-100 text-[#0F78C8]"
-                          }`}
-                        >
-                          {m.nom.split(" ").slice(-1)[0].charAt(0)}
-                        </div>
-                        <div>
-                          <h4 className={`text-sm font-extrabold ${isPres ? "text-white" : "text-slate-900"}`}>
-                            {m.nom}
-                          </h4>
-                          <span className={`text-[11px] font-semibold ${isPres ? "text-amber-300" : "text-[#0F78C8]"}`}>
-                            {m.role}
-                          </span>
-                        </div>
-                      </div>
-
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                        isPres ? "bg-white/15 text-white" : "bg-slate-100 text-slate-500"
-                      }`}>
-                        {m.tag}
-                      </span>
-                    </div>
-
-                    <p className={`text-xs mt-2 leading-relaxed ${isPres ? "text-blue-100" : "text-slate-600"}`}>
-                      {m.desc}
-                    </p>
-                  </div>
-                );
-              })}
             </div>
           </div>
         )}
