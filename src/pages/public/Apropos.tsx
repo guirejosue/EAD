@@ -10,7 +10,7 @@ const timeline = [
   { year: "1975", title: "Indépendance administrative", desc: "Les Assemblées de Dieu du Burkina Faso deviennent autonomes et établissent leur propre Bureau National à Ouagadougou." },
   { year: "1999", title: "Institut Biblique de Ouagadougou", desc: "Inauguration de l'Institut Biblique national, formant des centaines de responsables d'église chaque année." },
   { year: "2018", title: "Lancement de la Vision 3R", desc: "Adoption officielle de la Vision 3R (Réveil, Réforme, Rayonnement) comme feuille de route stratégique de l'église à l'horizon 2030." },
-  { year: "2026", title: "1 842 églises locales", desc: "Le réseau compte aujourd'hui 1 842 assemblées locales réparties dans les 79 régions ecclésiastiques du Burkina Faso." },
+  { year: "2026", title: "7 014 églises locales", desc: "Le réseau compte aujourd'hui 7 014 assemblées locales et 809 000 membres répartis dans 79 régions ecclésiastiques, 15 centres et 318 sous-régions." },
 ];
 
 const orgChart = {
@@ -100,14 +100,16 @@ export default function Apropos() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C8973A" }}>Notre cap stratégique</div>
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>La Vision 3R — Horizon 2030</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">Trois piliers adoptés en 2018 pour guider le développement de toutes nos assemblées jusqu'en 2030.</p>
+            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>La Vision des 3R — Horizon 2030</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+              Le chemin des 3R : Réforme, Réveil et Rayonnement, est l’expression concrète d’une vision plus large, celle qui engage notre Église dans une dynamique de transformation profonde.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { letter: "R", title: "Réveil", subtitle: "Renouveau spirituel profond", desc: "Un réveil spirituel touchant chaque église locale, chaque famille et chaque individu à travers la prière, l'adoration et la Parole. Objectif : 80% des assemblées engagées dans un programme de prière continue d'ici 2028.", icon: Mic, color: "#0F78C8", light: "#D9EEFA", progress: 78 },
-              { letter: "R", title: "Réforme", subtitle: "Transformation structurelle", desc: "Une transformation des pratiques ecclésiales, de la gouvernance et de la formation des leaders. Cela inclut la révision des statuts, le renforcement de la formation théologique et la transparence financière.", icon: TrendingUp, color: "#C8973A", light: "#FDF4E0", progress: 65 },
-              { letter: "R", title: "Rayonnement", subtitle: "Expansion missionnaire", desc: "Une expansion missionnaire et un témoignage social qui atteignent les nations, en commençant par les zones non évangélisées du Burkina Faso, les pays voisins du Sahel et au-delà.", icon: Globe, color: "#16A34A", light: "#DCFCE7", progress: 72 },
+              { letter: "R", title: "Réforme", subtitle: "Restructuration & gestion rigoureuse", desc: "La Réforme, en ce qu’elle appelle à une restructuration des pratiques, à une meilleure organisation et à une gestion rigoureuse, conforme aux principes bibliques et aux exigences institutionnelles.", icon: TrendingUp, color: "#0F78C8", light: "#D9EEFA", progress: 85 },
+              { letter: "R", title: "Réveil", subtitle: "Dieu au centre & vie de l'Esprit", desc: "Le Réveil, en ce qu’elle replace Dieu au centre de toutes nos actions, en rappelant que toute organisation véritable doit être animée par la vie de l’Esprit Saint.", icon: Mic, color: "#C8973A", light: "#FDF4E0", progress: 90 },
+              { letter: "R", title: "Rayonnement", subtitle: "Témoignage puissant pour le monde", desc: "Le Rayonnement, enfin, en ce qu’une Église bien ordonnée, transparente et responsable devient un puissant témoignage pour le monde.", icon: Globe, color: "#16A34A", light: "#DCFCE7", progress: 88 },
             ].map(v => (
               <div key={v.title} className="relative overflow-hidden rounded-2xl p-8" style={{ border: "1px solid #D9EEFA", background: "white", boxShadow: "0 2px 12px rgba(11,31,75,0.06)" }}>
                 <div className="absolute top-4 right-4 text-8xl font-black opacity-5" style={{ fontFamily: "'Manrope', sans-serif", color: v.color, lineHeight: 1 }}>{v.letter}</div>

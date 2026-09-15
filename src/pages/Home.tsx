@@ -18,12 +18,13 @@ import imgCongressHall from "../imports/WhatsApp Image 2026-09-12 at 12.43.51.jp
 import heroChurchExterior from "../imports/hero_church_exterior.jpg";
 
 const stats = [
-  { label: "Églises locales", value: "1 842", icon: Church, color: "#0F78C8" },
+  { label: "Centres", value: "15", icon: Building2, color: "#0F78C8" },
   { label: "Régions", value: "79", icon: MapPin, color: "#0D67B0" },
-  { label: "Pasteurs", value: "2 340", icon: Users, color: "#C8973A" },
-  { label: "Membres", value: "487 000", icon: Heart, color: "#16A34A" },
-  { label: "Implantations", value: "318", icon: Globe, color: "#0D67B0" },
-  { label: "Actions missionnaires", value: "94", icon: Star, color: "#C8973A" },
+  { label: "Sous-régions", value: "318", icon: Layers, color: "#0A5490" },
+  { label: "Églises locales", value: "7 014", icon: Church, color: "#0F78C8" },
+  { label: "Membres", value: "809 000", icon: Users, color: "#16A34A" },
+  { label: "Nouvelles implantations", value: "45", icon: TrendingUp, color: "#C8973A" },
+  { label: "Vision Missionnaire int. & ext.", value: "43", icon: Globe, color: "#D97706" },
 ];
 
 const news = [
@@ -195,16 +196,18 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C8973A" }}>En chiffres</div>
-            <h2 className="text-3xl font-bold" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>Un réseau d'envergure nationale</h2>
+            <h2 className="text-3xl font-bold" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>Une Église d’envergure nationale et internationale</h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="card text-center p-6" style={{ background: "white", borderRadius: "12px", border: "1px solid #D9EEFA", boxShadow: "0 1px 4px rgba(11,31,75,0.05)" }}>
-                <div className="w-10 h-10 rounded-xl mx-auto mb-3 flex items-center justify-center" style={{ background: "#EBF6FD" }}>
-                  <s.icon size={20} style={{ color: s.color }} />
+              <div key={s.label} className="card text-center p-4 sm:p-5 flex flex-col justify-between" style={{ background: "white", borderRadius: "12px", border: "1px solid #D9EEFA", boxShadow: "0 1px 4px rgba(11,31,75,0.05)" }}>
+                <div>
+                  <div className="w-10 h-10 rounded-xl mx-auto mb-3 flex items-center justify-center" style={{ background: "#EBF6FD" }}>
+                    <s.icon size={20} style={{ color: s.color }} />
+                  </div>
+                  <div className="text-xl sm:text-2xl font-bold mb-1" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>{s.value}</div>
                 </div>
-                <div className="text-2xl font-bold mb-1" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>{s.value}</div>
-                <div className="text-xs text-gray-500 leading-tight">{s.label}</div>
+                <div className="text-xs text-gray-600 leading-tight font-medium mt-1">{s.label}</div>
               </div>
             ))}
           </div>
@@ -216,22 +219,47 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C8973A" }}>Notre vision</div>
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>La Vision 3R</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Trois piliers qui structurent notre engagement pour le Burkina Faso et au-delà.</p>
+            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Manrope', sans-serif", color: "#0F78C8" }}>La Vision des 3R</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
+              Le chemin des 3R : Réforme, Réveil et Rayonnement, est l’expression concrète d’une vision plus large, celle qui engage notre Église dans une dynamique de transformation profonde.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { letter: "R", title: "Réveil", desc: "Un réveil spirituel profond touchant chaque église locale, chaque famille et chaque individu à travers la prière et la Parole.", icon: Mic, color: "#0F78C8", light: "#D9EEFA" },
-              { letter: "R", title: "Réforme", desc: "Une transformation structurelle des pratiques ecclésiales, de la gouvernance et de la formation des leaders pour une église ancrée.", icon: TrendingUp, color: "#C8973A", light: "#FDF4E0" },
-              { letter: "R", title: "Rayonnement", desc: "Une expansion missionnaire et un témoignage social qui atteignent les nations, en commençant par le Burkina Faso et la région sahélienne.", icon: Globe, color: "#16A34A", light: "#DCFCE7" },
+              {
+                letter: "R",
+                title: "Réforme",
+                desc: "La Réforme, en ce qu’elle appelle à une restructuration des pratiques, à une meilleure organisation et à une gestion rigoureuse, conforme aux principes bibliques et aux exigences institutionnelles.",
+                icon: Building2,
+                color: "#0F78C8",
+                light: "#D9EEFA",
+              },
+              {
+                letter: "R",
+                title: "Réveil",
+                desc: "Le Réveil, en ce qu’elle replace Dieu au centre de toutes nos actions, en rappelant que toute organisation véritable doit être animée par la vie de l’Esprit Saint.",
+                icon: Heart,
+                color: "#C8973A",
+                light: "#FDF4E0",
+              },
+              {
+                letter: "R",
+                title: "Rayonnement",
+                desc: "Le Rayonnement, enfin, en ce qu’une Église bien ordonnée, transparente et responsable devient un puissant témoignage pour le monde.",
+                icon: Globe,
+                color: "#16A34A",
+                light: "#DCFCE7",
+              },
             ].map((v) => (
-              <div key={v.title} className="relative overflow-hidden rounded-2xl p-8" style={{ border: "1px solid #D9EEFA", background: "white", boxShadow: "0 2px 12px rgba(11,31,75,0.06)" }}>
-                <div className="absolute top-4 right-4 text-8xl font-black opacity-5" style={{ fontFamily: "'Manrope', sans-serif", color: v.color, lineHeight: 1 }}>{v.letter}</div>
-                <div className="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style={{ background: v.light }}>
-                  <v.icon size={24} style={{ color: v.color }} />
+              <div key={v.title} className="relative overflow-hidden rounded-2xl p-8 flex flex-col justify-between" style={{ border: "1px solid #D9EEFA", background: "white", boxShadow: "0 2px 12px rgba(11,31,75,0.06)" }}>
+                <div>
+                  <div className="absolute top-4 right-4 text-8xl font-black opacity-5" style={{ fontFamily: "'Manrope', sans-serif", color: v.color, lineHeight: 1 }}>{v.letter}</div>
+                  <div className="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center" style={{ background: v.light }}>
+                    <v.icon size={24} style={{ color: v.color }} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "'Manrope', sans-serif", color: v.color }}>{v.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "'Manrope', sans-serif", color: v.color }}>{v.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
                 <div className="mt-6 w-8 h-1 rounded" style={{ background: v.color }} />
               </div>
             ))}
@@ -616,16 +644,16 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-3 w-full lg:w-48 flex-shrink-0">
                 <div className="px-4 py-2.5 rounded-xl border text-center lg:text-left" style={{ background: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.15)" }}>
-                  <div className="text-lg font-bold text-white">1 842</div>
+                  <div className="text-lg font-bold text-white">7 014</div>
                   <div className="text-[11px]" style={{ color: "#93C5FD" }}>Églises locales unies</div>
                 </div>
                 <div className="px-4 py-2.5 rounded-xl border text-center lg:text-left" style={{ background: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.15)" }}>
                   <div className="text-lg font-bold text-amber-300">79 Régions</div>
-                  <div className="text-[11px]" style={{ color: "#93C5FD" }}>Supervisées par le BEN</div>
+                  <div className="text-[11px]" style={{ color: "#93C5FD" }}>15 Centres · 318 Sous-régions</div>
                 </div>
                 <div className="col-span-2 sm:col-span-1 px-4 py-2.5 rounded-xl border text-center lg:text-left" style={{ background: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.15)" }}>
-                  <div className="text-lg font-bold text-emerald-300">+500</div>
-                  <div className="text-[11px]" style={{ color: "#93C5FD" }}>Implantations visées</div>
+                  <div className="text-lg font-bold text-emerald-300">809 000</div>
+                  <div className="text-[11px]" style={{ color: "#93C5FD" }}>Membres engagés</div>
                 </div>
               </div>
             </div>
@@ -646,12 +674,12 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                     <h3 className="font-black text-2xl" style={{ fontFamily: "'Manrope', sans-serif" }}>Réforme</h3>
                   </div>
                 </div>
-                <div className="text-xs text-sky-100 font-semibold mt-2">Dans l'organisation & la gestion</div>
+                <div className="text-xs text-sky-100 font-semibold mt-2">Organisation & saine gouvernance</div>
               </div>
               <div className="p-6 flex flex-col flex-1 justify-between bg-white">
                 <div>
                   <p className="text-sm leading-relaxed text-slate-600 mb-4">
-                    Restructurer nos instances ecclésiales, moderniser la gestion financière et comptable, et garantir une gouvernance intègre, responsable et transparente à chaque échelon de la base au sommet.
+                    La Réforme, en ce qu’elle appelle à une restructuration des pratiques, à une meilleure organisation et à une gestion rigoureuse, conforme aux principes bibliques et aux exigences institutionnelles.
                   </p>
                   <div className="p-3.5 rounded-xl mb-4 bg-sky-50 border border-sky-100">
                     <p className="text-xs italic font-semibold text-sky-900 leading-snug">
@@ -663,15 +691,15 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                 <div className="pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-700 font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-sky-600 flex-shrink-0" />
-                    <span>Déclarations financières transparentes</span>
+                    <span>Restructuration des pratiques</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-sky-600 flex-shrink-0" />
-                    <span>Responsabilité pastorale décentralisée</span>
+                    <span>Meilleure organisation & gestion rigoureuse</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-sky-600 flex-shrink-0" />
-                    <span>Audits et harmonisation comptable</span>
+                    <span>Conformité biblique & institutionnelle</span>
                   </div>
                 </div>
               </div>
@@ -689,12 +717,12 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                     <h3 className="font-black text-2xl" style={{ fontFamily: "'Manrope', sans-serif" }}>Réveil</h3>
                   </div>
                 </div>
-                <div className="text-xs text-amber-100 font-semibold mt-2">Dans la vie spirituelle & la foi</div>
+                <div className="text-xs text-amber-100 font-semibold mt-2">La vie de l'Esprit Saint au centre</div>
               </div>
               <div className="p-6 flex flex-col flex-1 justify-between bg-white">
                 <div>
                   <p className="text-sm leading-relaxed text-slate-600 mb-4">
-                    Ranimer la flamme apostolique et la ferveur spirituelle par la prière persévérante, le jeûne, la communion fraternelle sincère et un discipulat profond au sein de chaque foyer et église locale.
+                    Le Réveil, en ce qu’elle replace Dieu au centre de toutes nos actions, en rappelant que toute organisation véritable doit être animée par la vie de l’Esprit Saint.
                   </p>
                   <div className="p-3.5 rounded-xl mb-4 bg-amber-50 border border-amber-100">
                     <p className="text-xs italic font-semibold text-amber-900 leading-snug">
@@ -706,15 +734,15 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                 <div className="pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-700 font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-amber-600 flex-shrink-0" />
-                    <span>Mouvement national de prière & jeûne</span>
+                    <span>Dieu au centre de toutes nos actions</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-amber-600 flex-shrink-0" />
-                    <span>Discipulat intégral et sanctification</span>
+                    <span>Organisation animée par l'Esprit Saint</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-amber-600 flex-shrink-0" />
-                    <span>Formation spirituelle des familles</span>
+                    <span>Ferveur spirituelle, prière et jeûne</span>
                   </div>
                 </div>
               </div>
@@ -732,12 +760,12 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                     <h3 className="font-black text-2xl" style={{ fontFamily: "'Manrope', sans-serif" }}>Rayonnement</h3>
                   </div>
                 </div>
-                <div className="text-xs text-emerald-100 font-semibold mt-2">Dans la mission & les œuvres</div>
+                <div className="text-xs text-emerald-100 font-semibold mt-2">Un puissant témoignage pour le monde</div>
               </div>
               <div className="p-6 flex flex-col flex-1 justify-between bg-white">
                 <div>
                   <p className="text-sm leading-relaxed text-slate-600 mb-4">
-                    Porter la Bonne Nouvelle dans toutes les contrées non atteintes du Burkina Faso, implanter de nouvelles églises et servir la société par des œuvres chrétiennes d'éducation, de santé et d'entraide.
+                    Le Rayonnement, enfin, en ce qu’une Église bien ordonnée, transparente et responsable devient un puissant témoignage pour le monde.
                   </p>
                   <div className="p-3.5 rounded-xl mb-4 bg-emerald-50 border border-emerald-100">
                     <p className="text-xs italic font-semibold text-emerald-900 leading-snug">
@@ -749,15 +777,15 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                 <div className="pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-700 font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-emerald-600 flex-shrink-0" />
-                    <span>Objectif 500 nouvelles implantations</span>
+                    <span>Église ordonnée, transparente & responsable</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-emerald-600 flex-shrink-0" />
-                    <span>Centres de santé & écoles confessionnelles</span>
+                    <span>Puissant témoignage pour le monde</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={14} className="text-emerald-600 flex-shrink-0" />
-                    <span>Actions compassionnelles au Sahel</span>
+                    <span>Vision missionnaire intérieure & extérieure</span>
                   </div>
                 </div>
               </div>
@@ -807,7 +835,7 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                   {
                     num: "4",
                     niveau: "Échelon des Centres (BEN)",
-                    instance: "Centres Ecclésiastiques (Supervision directe par les membres du BEN)",
+                    instance: "15 Centres Ecclésiastiques (Supervision directe BEN)",
                     role: "Situés entre les régions et le Bureau National : chaque membre du BEN supervise un Centre regroupant des régions pour assurer la coordination stratégique.",
                     mode: "Supervision inter-régionale BEN",
                     bgBadge: "#0A5490",
@@ -829,7 +857,7 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                   {
                     num: "2",
                     niveau: "Échelon Sous-Régional",
-                    instance: "Conseils Sous-Régionaux (Présidents de Sous-région)",
+                    instance: "318 Conseils Sous-Régionaux (Présidents de Sous-région)",
                     role: "Coordination et encadrement pastoral de proximité au contact direct des églises locales, suivi fraternel et validation de terrain.",
                     mode: "Proximité & validation de terrain",
                     bgBadge: "#C8973A",
@@ -840,8 +868,8 @@ export default function Home({ onNavigate }: { onNavigate: (p: string) => void }
                   {
                     num: "1",
                     niveau: "Échelon Local (Base)",
-                    instance: "1 842 Églises Locales",
-                    role: "Le socle vivant de la communauté : cultes, discipulat, saisie primaire des déclarations financières et statistiques remontées vers le haut.",
+                    instance: "7 014 Églises Locales",
+                    role: "Le socle vivant de la communauté : plus de 809 000 membres, cultes, discipulat, implantations et remontées ascendantes.",
                     mode: "Déclarations primaires & culte",
                     bgBadge: "#16A34A",
                     color: "text-white",
